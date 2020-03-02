@@ -1,0 +1,20 @@
+parameters:
+  - $ref: ../components/parameters/resourceId.yaml
+get:
+  tags:
+    - Серия
+  summary: Получить все серии сезона по его ID
+  operationId: GetSeriesFromSeason
+  description: |
+    Получить все серии сезона по его ID
+  responses:
+    '200':
+      description: Информация о сериях сезона успешно получена
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Series.yaml
+    '401':
+      description: Отказано в доступе
+    '404':
+      description: Не найдено

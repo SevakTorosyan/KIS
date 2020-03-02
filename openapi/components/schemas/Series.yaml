@@ -1,0 +1,26 @@
+type: object
+required:
+  - seasonID
+properties:
+  id:
+    description: Идентификатор серии
+    allOf:
+      - $ref: ./ResourceId.yaml
+    readOnly: true
+  serialID:
+    description: Связан с ID сезона
+    type: string
+  name:
+    description: Название серии
+    type: string
+    maxLength: 50
+  description:
+    description: Описание серии
+    type: string
+  logo:
+    description: Логотип серии
+    type: string
+  seriesNumber:
+    description: Номер серии
+    type: number
+    example: 1

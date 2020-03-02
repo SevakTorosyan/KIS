@@ -1,0 +1,33 @@
+type: object
+properties:
+  id:
+    description: Идентификатор сериала
+    allOf:
+      - $ref: ./ResourceId.yaml
+    readOnly: true
+  name:
+    description: Название сериала
+    type: string
+    maxLength: 50
+  description:
+    description: Описание сериала
+    type: string
+  logo:
+    description: Логотип сериала
+    type: string
+  seasonNumber:
+    description: Количество сезонов
+    type: number
+    example: 1
+  genre:
+    description: Жанр
+    type: string
+    enum:
+      - "Комедия"
+      - "Драма"
+      - "Мелодрама"
+      - "Триллер"
+      - "Ужастик"
+      - "Детектив"
+      - "Приключение"
+

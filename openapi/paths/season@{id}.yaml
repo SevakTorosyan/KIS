@@ -1,0 +1,59 @@
+parameters:
+  - $ref: ../components/parameters/resourceId.yaml
+get:
+  tags:
+    - Сезон
+  summary: Получить сезон по ID
+  operationId: GetSeason
+  description: |
+    Получить информацию о сезоне по ID
+  responses:
+    '200':
+      description: Информация о сезоне успешно получена
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Season.yaml
+    '401':
+      description: Отказано в доступе
+    '404':
+      description: Не найдено
+put:
+  tags:
+    - Сезон
+  summary: Добавить или изменить сезон по ID
+  operationId: PutSeason
+  requestBody:
+    content:
+      description: Операция прошла успешно
+  responses:
+    '201':
+      description: Сезон был добавлен
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Season.yaml
+    '401':
+      description: Отказано в доступе
+    '404':
+      description: Не найдено
+    '409':
+      description: Сезон существует и не может быть обновлен
+    '422':
+      description: Неверные данные
+delete:
+  tags:
+    - Сезон
+  summary: Удалить сезон по ID
+  operationId: DeleteSeason
+  description: |
+    Удалить сезон по ID
+  responses:
+    '204':
+      description: Сезон был удален
+    '401':
+      description: Отказано в доступе
+    '402':
+      description: Не можеть быть удален
+    '404':
+      description: Не найдено

@@ -1,0 +1,42 @@
+get:
+  tags:
+    - Пользователь
+  summary: Получить информацию о пользователях
+  operationId: GetUsers
+  description: |
+    Получить информацию о пользователях
+  responses:
+    '200':
+      description: Информация о пользователях была успешно получена
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: ../components/schemas/User.yaml
+    '401':
+      description: Отказано в доступе
+#      $ref: ../components/responses/AccessForbidden.yaml
+post:
+  tags:
+    - Пользователь
+  summary: Добавить нового пользователя
+  operationId: PostUser
+  description: |
+    Добавить нового пользователя
+  requestBody:
+    content:
+      description: Пользователь добавлен
+  responses:
+    '200':
+      description: Пользователь был успешно добавлен
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: ../components/schemas/User.yaml
+    '401':
+      description: Отказано в доступе
+    '422':
+      description: Неверные данные

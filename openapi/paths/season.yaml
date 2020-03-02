@@ -1,0 +1,23 @@
+post:
+  tags:
+    - Сезон
+  summary: Добавить новый сезон
+  operationId: PostSeason
+  description: |
+    Добавить новый сезон
+  requestBody:
+    content:
+      description: Сезон добавлен
+  responses:
+    '200':
+      description: Сезон был успешно добавлен
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: ../components/schemas/Season.yaml
+    '401':
+      description: Отказано в доступе
+    '422':
+      description: Неверные данные

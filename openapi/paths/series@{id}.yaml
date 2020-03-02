@@ -1,0 +1,59 @@
+parameters:
+  - $ref: ../components/parameters/resourceId.yaml
+get:
+  tags:
+    - Серия
+  summary: Получить серию по ID
+  operationId: GetSeries
+  description: |
+    Получить информацию о серии по ID
+  responses:
+    '200':
+      description: Информация о серии успешно получена
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Series.yaml
+    '401':
+      description: Отказано в доступе
+    '404':
+      description: Не найдено
+put:
+  tags:
+    - Серия
+  summary: Добавить или изменить серию по ID
+  operationId: PutSeries
+  requestBody:
+    content:
+      description:  Операция прошла успешно
+  responses:
+    '201':
+      description: Серия была добавлена
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Series.yaml
+    '401':
+      description: Отказано в доступе
+    '404':
+      description: Не найдено
+    '409':
+      description: Серия существует и не может быть обновлен
+    '422':
+      description: Неверные данные
+delete:
+  tags:
+    - Серия
+  summary: Удалить серию по ID
+  operationId: DeleteSeries
+  description: |
+    Удалить серию по ID
+  responses:
+    '204':
+      description: Серия была удалена
+    '401':
+      description: Отказано в доступе
+    '402':
+      description: Не можеть быть удален
+    '404':
+      description: Не найдено

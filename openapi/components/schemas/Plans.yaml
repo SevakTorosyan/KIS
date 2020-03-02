@@ -1,0 +1,24 @@
+type: object
+properties:
+  id:
+    description: Идентификатор плана подписки
+    allOf:
+      - $ref: ./ResourceId.yaml
+    readOnly: true
+  name:
+    description: Название плана
+    type: string
+  description:
+    description: Описание плана
+    type: string
+  subscriptionDayCount:
+    description: Количество дней действия подписки
+    type: number
+    example: 30
+  price:
+    description: Стоимость подписки
+    type: integer
+    example: 300
+  isActual:
+    description: Актуальна ли подписка
+    type: boolean

@@ -1,0 +1,59 @@
+parameters:
+  - $ref: ../components/parameters/customerId.yaml
+get:
+  tags:
+    - Пользователь
+  summary: Получить пользователя по ID
+  operationId: GetUser
+  description: |
+    Получить информацию о пользователе по ID
+  responses:
+    '200':
+      description: Информация о пользователе успешно получена
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/User.yaml
+    '401':
+      description: Отказано в доступе
+    '404':
+      description: Не найдено
+put:
+  tags:
+    - Пользователь
+  summary: Добавить или изменить пользователя по ID
+  operationId: PutUser
+  requestBody:
+    content:
+      description: Операция прошла успешно
+  responses:
+    '201':
+      description: Пользователь был добавлен
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/User.yaml
+    '401':
+      description: Отказано в доступе
+    '404':
+      description: Не найдено
+    '409':
+      description: Пользователь существует и не может быть обновлен
+    '422':
+      description: Неверные данные
+delete:
+  tags:
+    - Пользователь
+  summary: Удалить пользователя по ID
+  operationId: DeleteUser
+  description: |
+    Удалить пользователя по ID
+  responses:
+    '204':
+      description: Пользователь был удален
+    '401':
+      description: Отказано в доступе
+    '402':
+      description: Не можеть быть удален
+    '404':
+      description: Не найдено

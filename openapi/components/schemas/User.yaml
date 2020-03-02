@@ -1,0 +1,37 @@
+type: object
+required:
+  - planId
+properties:
+  id:
+    description: Идентификатор пользователя
+    allOf:
+      - $ref: ./ResourceId.yaml
+    readOnly: true
+  planId:
+    description: Связан с ID плана подписки
+    type: string
+  name:
+    decription: ФИО
+    type: string
+  birthDate:
+    description: Дата рождения
+    type: string
+  createdTime:
+    description: Время создания аккаунта
+    allOf:
+      - $ref: ./ServerTimestamp.yaml
+  updatedTime:
+    description: Время обновления аккаунта
+    allOf:
+      - $ref: ./ServerTimestamp.yaml
+  subscribeTimeStart:
+    description: Начало действия подписки
+    allOf:
+      - $ref: ./ServerTimestamp.yaml
+  subscribeTimeFinish:
+    description: Конец действия подписки
+    allOf:
+      - $ref: ./ServerTimestamp.yaml
+  isSubcribeActual:
+    description: Действует ли подписка
+    type: boolean

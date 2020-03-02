@@ -1,0 +1,57 @@
+parameters:
+  - $ref: ../components/parameters/resourceId.yaml
+get:
+  tags:
+    - План подписки
+  summary: Получить план подписки по ID
+  operationId: GetPlan
+  description: |
+    Получить информацию о плане подписки по ID
+  responses:
+    '200':
+      description: Информация о плане подписки успешно получена
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Plans.yaml
+    '401':
+      description: Отказано в доступе
+    '404':
+      description: Не найдено
+patch:
+  tags:
+    - План подписки
+  summary: Изменить план подписки по ID
+  operationId: PatchPlan
+  requestBody:
+    content:
+      description: Операция прошла успешно
+  responses:
+    '201':
+      description: План был изменен
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Plans.yaml
+    '401':
+      description: Отказано в доступе
+    '404':
+      description: Не найдено
+    '422':
+      description: Неверные данные
+delete:
+  tags:
+    - План подписки
+  summary: Удалить план подписки по ID
+  operationId: DeletePlan
+  description: |
+    Удалить план подписки по ID
+  responses:
+    '204':
+      description: План подписки был удален
+    '401':
+      description: Отказано в доступе
+    '402':
+      description: Не можеть быть удален
+    '404':
+      description: Не найдено

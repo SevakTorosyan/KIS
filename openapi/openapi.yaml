@@ -1,0 +1,62 @@
+openapi: 3.0.0
+info:
+  version: '1.0'
+  title: LostFilm API
+  contact:
+    name: Sevak
+    email: sevak754@gmail.com
+servers:
+  - url: 'https://example.com/v1.0'
+    description: Live Server
+tags:
+  - name: Сериал
+    description: |
+      В этом разделе вы можете получить
+      всю необходимую информацию о сериалах
+      или о конкретном сериале, а также удалить
+      или редактировать информацию о сериале.
+  - name: Сезон
+    description: |
+      В этом разделе вы можете получить информацию
+      о всех сезонах определенного сериала или о
+      конкретном сезоне, а также изменить или удалить
+      информацию о нем.
+  - name: Серия
+    description: |
+        В этом разделе вы можете получить информацию
+        о всех сериях определенного сезона или о
+        конкретной серии, а также изменить или удалить
+        информацию о нем.
+  - name: Пользователь
+    description: |
+        В этом разделе вы можете получить информацию
+        о всех пользователях или о конкретном, а также
+        изменить или удалить информацию о нем.
+security:
+  - SecretApiKey: []
+  - JWT: []
+paths:
+  /serials:
+    $ref: ./paths/serials.yaml
+  '/serial/{id}':
+    $ref: ./paths/serial@{id}.yaml
+  '/season':
+    $ref: ./paths/season.yaml
+  '/season/{serialId}':
+    $ref: ./paths/season@{serialId}.yaml
+  '/season/{id}':
+    $ref: ./paths/season@{id}.yaml
+  '/series':
+    $ref: ./paths/series.yaml
+  '/series/{seasonId}':
+    $ref: ./paths/series@{seasonId}.yaml
+  '/series/{id}':
+    $ref: ./paths/series@{id}.yaml
+  '/plans':
+    $ref: ./paths/plans.yaml
+  '/plan@{id}':
+    $ref: ./paths/plan@{id}.yaml
+  '/users':
+    $ref: ./paths/users.yaml
+  '/user/{id}':
+     $ref: ./paths/user@{id}.yaml

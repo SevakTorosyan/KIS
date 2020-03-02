@@ -1,0 +1,42 @@
+get:
+  tags:
+    - План подписки
+  summary: Получить информацию о планах подписки
+  operationId: GetPlans
+  description: |
+    Получить информацию о всех планах подписок
+  responses:
+    '200':
+      description: Информация о планах была успешно получена
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: ../components/schemas/Plans.yaml
+    '401':
+      description: Отказано в доступе
+#      $ref: ../components/responses/AccessForbidden.yaml
+post:
+  tags:
+    - План подписки
+  summary: Добавить новый план подписки
+  operationId: PostPlan
+  description: |
+    Добавить новый план подписки
+  requestBody:
+    content:
+      description: План подписки добавлен
+  responses:
+    '200':
+      description: План подписки был успешно добавлен
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: ../components/schemas/Plans.yaml
+    '401':
+      description: Отказано в доступе
+    '422':
+      description: Неверные данные

@@ -1,0 +1,42 @@
+get:
+  tags:
+    - Сериал
+  summary: Получить информацию о сериалах
+  operationId: GetSerials
+  description: |
+    Получить информацию о сериалах
+  responses:
+    '200':
+      description: Информация о сериалах была успешно получена
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: ../components/schemas/Serial.yaml
+    '401':
+      description: Отказано в доступе
+#      $ref: ../components/responses/AccessForbidden.yaml
+post:
+  tags:
+    - Сериал
+  summary: Добавить новый сериал
+  operationId: PostSerial
+  description: |
+    Добавить новый сериал
+  requestBody:
+    content:
+      description: Сериал добавлен
+  responses:
+    '200':
+      description: Сериал был успешно добавлен
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: ../components/schemas/Serial.yaml
+    '401':
+      description: Отказано в доступе
+    '422':
+      description: Неверные данные

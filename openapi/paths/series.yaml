@@ -1,0 +1,23 @@
+post:
+  tags:
+    - Серия
+  summary: Добавить новую серию
+  operationId: PostSeries
+  description: |
+    Добавить новую серию
+  requestBody:
+    content:
+      description: Серия добавлена
+  responses:
+    '200':
+      description: Серия была успешно добавлена
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: ../components/schemas/Series.yaml
+    '401':
+      description: Отказано в доступе
+    '422':
+      description: Неверные данные
