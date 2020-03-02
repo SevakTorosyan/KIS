@@ -25,7 +25,11 @@ put:
   operationId: PutSeries
   requestBody:
     content:
-      description:  Операция прошла успешно
+      application/json:
+        schema:
+          $ref: ../components/schemas/Series.yaml
+      description: Series resource
+      required: true
   responses:
     '201':
       description: Серия была добавлена

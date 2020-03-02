@@ -13,7 +13,9 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/Series.yaml
+            type: array
+            items:
+              $ref: ../components/schemas/Series.yaml
     '401':
       description: Отказано в доступе
     '404':

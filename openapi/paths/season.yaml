@@ -7,16 +7,18 @@ post:
     Добавить новый сезон
   requestBody:
     content:
-      description: Сезон добавлен
+      application/json:
+        schema:
+          $ref: ../components/schemas/Season.yaml
+      description: Season resource
+      required: true
   responses:
     '200':
       description: Сезон был успешно добавлен
       content:
         application/json:
           schema:
-            type: array
-            items:
-              $ref: ../components/schemas/Season.yaml
+            $ref: ../components/schemas/Season.yaml
     '401':
       description: Отказано в доступе
     '422':

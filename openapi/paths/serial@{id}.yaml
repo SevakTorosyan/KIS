@@ -25,7 +25,11 @@ put:
   operationId: PutSerial
   requestBody:
     content:
-      description: Операция прошла успешно
+      application/json:
+        schema:
+          $ref: ../components/schemas/Serial.yaml
+      description: Serial resource
+      required: false
   responses:
     '201':
       description: Сериал был добавлен

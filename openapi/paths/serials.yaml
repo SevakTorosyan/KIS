@@ -26,16 +26,19 @@ post:
     Добавить новый сериал
   requestBody:
     content:
-      description: Сериал добавлен
+      application/json:
+        schema:
+          $ref: ../components/schemas/Serial.yaml
+    description: Serial resource
+    required: false
+#    $ref: ../components/requestBodies/Serial.yaml
   responses:
     '200':
       description: Сериал был успешно добавлен
       content:
         application/json:
           schema:
-            type: array
-            items:
-              $ref: ../components/schemas/Serial.yaml
+            $ref: ../components/schemas/Serial.yaml
     '401':
       description: Отказано в доступе
     '422':

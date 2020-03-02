@@ -26,16 +26,18 @@ post:
     Добавить новый план подписки
   requestBody:
     content:
-      description: План подписки добавлен
+      application/json:
+        schema:
+          $ref: ../components/schemas/Plans.yaml
+      description: Plan resource
+      required: false
   responses:
     '200':
       description: План подписки был успешно добавлен
       content:
         application/json:
           schema:
-            type: array
-            items:
-              $ref: ../components/schemas/Plans.yaml
+            $ref: ../components/schemas/Plans.yaml
     '401':
       description: Отказано в доступе
     '422':

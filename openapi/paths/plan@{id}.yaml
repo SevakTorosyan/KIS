@@ -25,7 +25,11 @@ patch:
   operationId: PatchPlan
   requestBody:
     content:
-      description: Операция прошла успешно
+      application/json:
+        schema:
+          $ref: ../components/schemas/Plans.yaml
+      description: Plans resource
+      required: false
   responses:
     '201':
       description: План был изменен

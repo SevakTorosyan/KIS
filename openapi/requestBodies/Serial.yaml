@@ -1,0 +1,6 @@
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/Serial.yaml
+  description: Serial resource
+  required: false

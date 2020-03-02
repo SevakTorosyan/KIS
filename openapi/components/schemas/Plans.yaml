@@ -19,6 +19,6 @@ properties:
     description: Стоимость подписки
     type: integer
     example: 300
-  isActual:
+  isActive:
     description: Актуальна ли подписка
     type: boolean
